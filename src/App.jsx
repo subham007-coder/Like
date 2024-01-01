@@ -3,16 +3,19 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  let [count, setCount] = useState(0)
-
-  let updateCount = () => {
-    setCount(count += 1)
+  let [islike, setIsLike] = useState(false)
+  let like = () => {
+    setIsLike(!islike)
   }
 
   return (
     <>
-      <h1>Count {count}</h1>
-      <button onClick={updateCount}>Click</button>
+      <p onDoubleClick={like}>
+
+        {islike ? (<i className="fa-solid fa-heart"></i>) : (<i className="fa-regular fa-heart"></i>)}
+
+
+      </p>
     </>
   )
 }
